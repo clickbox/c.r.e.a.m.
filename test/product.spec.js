@@ -12,3 +12,11 @@ it('add product price', async () => {
     const newProduct = await new Product('Ground Beef', 5.00);
     await expect(newProduct.price).toEqual(5.00);
 });
+
+it('product is added to cart with price and name', async () => {
+    const cart = [];
+    const newProduct = await new Product('Ground Beef', 5.00);
+    await cart.push(newProduct);
+    await expect(cart[0].name).toBe('Ground Beef');
+    await expect(cart[0].price).toEqual(5.00);
+});
