@@ -1,4 +1,4 @@
-import { Product } from './products';
+import { Product } from '../modules/products';
 
 it('add product works', async () => {
     const cart = [];
@@ -10,5 +10,5 @@ it('add product works', async () => {
 
 it('add product price', async () => {
     const newProduct = await new Product('Ground Beef', 5.00);
-    await expect(newProduct[1]).toEqual(5.00);
+    await expect(newProduct.price).toEqual(5.00);
 });
