@@ -1,6 +1,7 @@
 import { Product } from '../modules/products'
 import { BulkProduct } from '../modules/bulkProduct'
 
+
 it('add product works', async () => {
     const cart = []
     const newProduct = await new Product('Ground Beef')
@@ -32,14 +33,4 @@ it('update price of product', async () => {
     const apple = await new Product('Apple', 1.00)
     apple.price = 2.00
     await expect(apple.price).toEqual(2.00)
-})
-
-it('put product in cart', async () => {
-    const cart = []
-    const product1 = await new Product('Ground Beef', 5.00)
-    const product2 = await new Product('Apple', 1.00)
-    await addToCart(product1)
-    await addToCart(product2)
-    await expect(cart[1].name).toBe('Apple')
-    await expect(cart[1].price).toBe(1.00)
 })
