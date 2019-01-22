@@ -1,5 +1,6 @@
 import { Product } from '../modules/products'
 import * as add from '../modules/add'
+import { BulkProduct } from '../modules/bulkProduct'
 
 it('put product in cart', async () => {
     const product1 = await new Product('Ground Beef', 5.00)
