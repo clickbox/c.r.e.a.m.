@@ -1,5 +1,5 @@
 import { Product } from '../modules/products'
-// import * as add from '../modules/add'
+import * as add from '../modules/add'
 
 it('put product in cart', async () => {
     const product1 = await new Product('Ground Beef', 5.00)
