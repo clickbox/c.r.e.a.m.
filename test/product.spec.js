@@ -20,3 +20,10 @@ it('product is added to cart with price and name', async () => {
     await expect(cart[0].name).toBe('Ground Beef');
     await expect(cart[0].price).toEqual(5.00);
 });
+
+it('add product with weight for bulk price by pounds', async () => {
+    const cart = [];
+    const newBulkProduct = await new BulkProduct('Ground Beef', 5.00, 2);
+    await expect(newBulkProduct.weight).toEqual(2);
+    await console.log(newBulkProduct);
+})
