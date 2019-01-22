@@ -10,3 +10,13 @@ it('put product in cart', async () => {
     await expect(add.cart[1].price).toBe(1.00)
     console.log(add.cart)
 })
+
+it('should add both type of product to cart', async () => {
+    const product1 = await new BulkProduct('Ground Beef', 5.00)
+    const product2 = await new Product('Apple', 1.00)
+    await add.toCart(product1)
+    await add.toCart(product2)
+    await expect(add.cart[1].name).toBe('Apple')
+    await expect(add.cart[0].name).toBe('Ground Beef')
+    console.log(add.cart)
+})
