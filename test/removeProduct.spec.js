@@ -1,4 +1,5 @@
 import { Product } from '../modules/products'
+import * as remove from '../modules/remove'
 
 it('should remove last product added to cart', async () => {
     let inventory = await []
