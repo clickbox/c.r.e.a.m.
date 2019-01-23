@@ -3,5 +3,5 @@ export function bulkPrice(product){
 }
 
 export function ID(id, inventory){
-    return inventory[id] ? inventory[id] : 'Product Not found'
+    return inventory[id] ? inventory[id] : 'Product Not Found!'
 }
