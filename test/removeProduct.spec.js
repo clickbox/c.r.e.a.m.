@@ -1,5 +1,6 @@
 import { Product } from '../modules/products'
 import * as remove from '../modules/remove'
+import * as add from '../modules/add'
 
 it('should remove last product added to cart', async () => {
     let inventory = await []
@@ -28,17 +29,18 @@ it('should remove first product in cart', async () => {
 })
 
 it('should remove first product in cart', async () => {
-    let id = await 1
-    let cart = add.cart
+    let id = 1
+    let cart = await add.cart
     const apple = await new Product('Apple', 1.00)
     const lime = await new Product('Lime', .50)
     const orange = await new Product('Orange', 1.50)
-    await add.toCart(apple, lime, orange)
+    await cart.push(apple, lime, orange)
     await expect(cart.length).toEqual(3)
+    await console.log(cart)
     await expect(cart[1].name).toBe('Lime')
-    await cart.remove.lineItem(id)
+    await remove.lineItem(cart, id)
+    await console.log(cart)
     await expect(cart.length).toEqual(2)
-    await expect(cart[2].name).toBeUndefined()
     await expect(cart[1].name).toBe('Orange')
 })
 
