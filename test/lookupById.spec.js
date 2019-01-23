@@ -22,3 +22,15 @@ it('look up products in fake inventory by id user inputs', async () => {
     await expect(product.name).toBe('Lime')
     await console.log(product)
 })
+
+it('should say product not found when id is null', async () => {
+    let id = 6
+    let inventory = []
+    const apple = await new Product('Apple', 1.00)
+    const lime = await new Product('Lime', .50)
+    const orange = await new Product('Orange', 1.50)
+    await inventory.push(apple, lime, orange)
+    let product = await lookUpBy.ID(id, inventory)
+    await expect(product).toEqual('Product Not Found!')
+    await console.log(product)
+})
