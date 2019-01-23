@@ -1,6 +1,6 @@
 import { Product } from '../modules/products'
-import * as add from '../modules/add'
 import { BulkProduct } from '../modules/bulkProduct'
+import * as add from '../modules/add'
 
 it('should add both type of product to cart', async () => {
     const cart = add.cart;

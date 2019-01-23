@@ -1,7 +1,6 @@
 import { Product } from '../modules/products'
 import { BulkProduct } from '../modules/bulkProduct'
 
-
 it('add product works', async () => {
     const cart = []
     const newProduct = await new Product('Ground Beef')
