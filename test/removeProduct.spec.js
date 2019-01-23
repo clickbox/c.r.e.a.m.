@@ -13,3 +13,18 @@ it('should remove last product added to cart', async () => {
     await expect(inventory.length).toEqual(2)
     await expect(inventory[inventory.length -1].name).toBe('Lime')
 })
+
+it('should remove first product in cart', async () => {
+    let inventory = await []
+    const apple = await new Product('Apple', 1.00)
+    const lime = await new Product('Lime', .50)
+    const orange = await new Product('Orange', 1.50)
+    await inventory.push(apple, lime, orange)
+    await expect(inventory.length).toEqual(3)
+    await expect(inventory[0].name).toBe('Apple')
+    await remove.firstItem(inventory)
+    await expect(inventory.length).toEqual(2)
+    await expect(inventory[0].name).toBe('Lime')
+})
+
+
