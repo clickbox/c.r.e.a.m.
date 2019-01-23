@@ -25,7 +25,6 @@ it('product is added to cart with price and name', async () => {
 it('add product with weight for bulk price by pounds', async () => {
     const newBulkProduct = await new BulkProduct('Ground Beef', 5.00, 2)
     await expect(newBulkProduct.weight).toEqual(2)
-    await console.log(newBulkProduct)
 })
 
 it('update price of product', async () => {

@@ -8,6 +8,5 @@ it('put product in cart', async () => {
     await add.toCart(product2)
     await expect(add.cart[1].name).toBe('Apple')
     await expect(add.cart[1].price).toBe(1.00)
-    console.log(add.cart)
 })
 
