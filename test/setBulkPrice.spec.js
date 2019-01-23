@@ -1,10 +1,11 @@
 import { BulkProduct } from '../modules/bulkProduct'
 import * as add from '../modules/add'
+import * as calculate from '../modules/calculate'
 
 it('should calculate price of weighed products', async () => {
+    const cart = add.cart
     const product = await new BulkProduct('Ground Beef', 5.00, 2)
     product.price = await calculate.bulkPrice(product);
-    await add.toCart(product)
-    await expect(add.cart[1].price).toBe(10)
-    console.log(add.cart)
+    await expect(cart[0].price).toBe(10)
+    console.log(product)
 })
