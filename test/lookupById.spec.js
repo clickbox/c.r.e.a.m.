@@ -1,4 +1,5 @@
 import { Product } from '../modules/products'
+import * as lookUpBy from '../modules/calculate'
 
 it('add products to fake inventory', async () => {
     let inventory = []
@@ -17,6 +18,7 @@ it('look up products in fake inventory by id user inputs', async () => {
     const lime = await new Product('Lime', .50)
     const orange = await new Product('Orange', 1.50)
     await inventory.push(apple, lime, orange)
-    let product = await inventory.filter(filterByID)[id]
+    let product = await lookUpBy.ID(id, inventory)
     await expect(product.name).toBe('Lime')
+    await console.log(product)
 })
