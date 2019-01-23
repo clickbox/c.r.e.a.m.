@@ -1,6 +1,5 @@
 import { Product } from '../modules/products'
 import * as add from '../modules/add'
-import { BulkProduct } from '../modules/bulkProduct'
 
 it('put product in cart', async () => {
     const product1 = await new Product('Ground Beef', 5.00)
@@ -12,12 +11,3 @@ it('put product in cart', async () => {
     console.log(add.cart)
 })
 
-it('should add both type of product to cart', async () => {
-    const product1 = await new BulkProduct('Ground Beef', 5.00, 5)
-    const product2 = await new Product('Apple', 1.00)
-    await add.toCart(product1)
-    await add.toCart(product2)
-    await expect(add.cart[1].name).toBe('Apple')
-    await expect(add.cart[0].name).toBe('Ground Beef')
-    console.log(add.cart)
-})
