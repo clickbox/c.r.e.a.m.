@@ -4,7 +4,7 @@ import * as calculate from '../modules/calculate'
 
 
 it('should remove last product added to cart', async () => {
-    let cart = add.cart
+    let cart = await add.cart
     const apple = await new Product('Apple', 1.00)
     const lime = await new Product('Lime', .50)
     const orange = await new Product('Orange', 1.50)
@@ -15,5 +15,4 @@ it('should remove last product added to cart', async () => {
     let total = await calculate.theTotal(cart)
     expect(total).toEqual(3)
     console.log(total)
-
 })
