@@ -8,6 +8,6 @@ export function firstItem(inventory){
 
 export function lineItem(cart, i) {
     if (i !== -1 && typeof cart[i] !== 'undefined') {
-       cart.splice(i, 1);
+       cart.splice(i, 1)
     }
 }

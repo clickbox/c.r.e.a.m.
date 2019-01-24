@@ -5,5 +5,5 @@ export function toCart(product) {
         cart.push(product)
       } else {
         console.log('Item not found!')
-      }
+    }
 }
