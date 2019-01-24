@@ -13,3 +13,8 @@ it('should show assigned properties of new Discount', async () => {
     await expect(Buy1Get1Free.percentOff).toEqual(100)
     console.log(Buy1Get1Free)
 })
+
+it('should have a name of product that discount goes with', async () => {
+    const saleOnBeef = new Discount('Ground Beef', 1, 1, 0, 100)
+    await expect(saleOnBeef).toBe('Ground Beef')
+})
