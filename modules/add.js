@@ -1,9 +1,9 @@
 export const cart = []
 
-export function toCart(product) {
-    if (product) {
+export function toCart(product){
+    if (product){
         cart.push(product)
-      } else {
+      } else{
         console.log('Item not found!')
     }
 }
