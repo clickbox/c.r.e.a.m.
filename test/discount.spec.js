@@ -16,5 +16,5 @@ it('should show assigned properties of new Discount', async () => {
 
 it('should have a name of product that discount goes with', async () => {
     const saleOnBeef = new Discount('Ground Beef', 1, 1, 0, 100)
-    await expect(saleOnBeef).toBe('Ground Beef')
+    await expect(saleOnBeef.product).toBe('Ground Beef')
 })
