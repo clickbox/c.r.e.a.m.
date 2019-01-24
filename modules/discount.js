@@ -1,5 +1,6 @@
 export class Discount {
-    constructor(numToBuy, numOnSale, limit, percentOff) {
+    constructor(product, numToBuy, numOnSale, limit, percentOff) {
+        this.product = product
         this.numToBuy = numToBuy
         this.numOnSale = numOnSale
         this.limit = limit
