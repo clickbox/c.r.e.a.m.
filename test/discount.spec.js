@@ -6,7 +6,6 @@ it('should create new discount object', async () => {
 })
 
 it('should show assigned properties of new Discount', async () => {
-    let discounts = []
     const Buy1Get1Free = new Discount(1, 1, 0, 100)
     await expect(Buy1Get1Free.numToBuy).toEqual(1)
     await expect(Buy1Get1Free.numOnSale).toEqual(1)
@@ -15,5 +14,6 @@ it('should show assigned properties of new Discount', async () => {
     console.log(Buy1Get1Free)
 })
 
-// it('should add discount to discounts array', async () => {
-// })
+it('should add discount to discounts array', async () => {
+
+})
