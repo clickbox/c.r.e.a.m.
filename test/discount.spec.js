@@ -13,7 +13,3 @@ it('should show assigned properties of new Discount', async () => {
     await expect(Buy1Get1Free.percentOff).toEqual(100)
     console.log(Buy1Get1Free)
 })
-
-it('should add discount to discounts array', async () => {
-
-})
