@@ -11,6 +11,6 @@ it('should add both type of product to cart', async () => {
     await expect(cart[1].name).toBe('Apple')
     await expect(cart[1].price).toEqual(1)
     await expect(cart[0].name).toBe('Ground Beef')
-    await expect(cart[0].price).toEqual(5.00)
+    await expect(cart[0].price).toEqual(25)
     await expect(cart[0].weight).toEqual(5)
 })
