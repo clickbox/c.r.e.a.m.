@@ -33,7 +33,7 @@ it('update price of product', async () => {
     await expect(apple.price).toEqual(2.00)
 })
 
-it('should have a quantity property', async => {
+it('should have a quantity property', async () => {
     const lemon = await new Product('Lemon', 1.00, 4)
     await expect(lemon.quantity).toEqual(4)
 })
