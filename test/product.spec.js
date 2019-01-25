@@ -37,3 +37,8 @@ it('should have a quantity property', async () => {
     const lemon = await new Product('Lemon', 1.00, 4)
     await expect(lemon.quantity).toEqual(4)
 })
+
+it('should have quantity of 1 if parameter not passed', async () => {
+    const melon = await new Product('Melon', 5.00)
+    await expect(melon.quantity).toEqual(1)
+})
