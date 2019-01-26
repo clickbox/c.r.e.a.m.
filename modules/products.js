@@ -15,9 +15,12 @@ export class Product {
                 if (discount instanceof Buy1Get1Free) {
                     if (item.quantity >= discount.numberToBuy 
                         && item.saleCounter < discount.limit) {
-                            item.totalPrice = item.quantity * item.price - item.price * discount.numberOff
-                            item.onSaleQuantity += discount.numberOff
-                            item.saleCounter++
+                            while(item.saleCounter < discount.limit) {
+                                item.totalPrice = item.quantity * item.price - item.price * discount.numberOff
+                                item.onSaleQuantity += discount.numberOff
+                                item.saleCounter++
+                            }
+                            
                     } else {
                         console.log('Error! Discount Does Not Apply')
                     }
