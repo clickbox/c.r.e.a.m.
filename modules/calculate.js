@@ -7,7 +7,7 @@ export function ID(id, inventory){
 }
 
 export function theTotal(cart){
-    return cart.reduce(function(accumulator, currentValue){
-      return accumulator + currentValue.price
+    return cart.reduce(function(total, product){
+      return total + product.price * product.quantity + (product.totalPrice ? product.totalPrice : 0)
     }, 0)
 }
