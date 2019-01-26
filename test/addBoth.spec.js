@@ -3,7 +3,7 @@ import { BulkProduct } from '../modules/bulkProduct'
 import * as add from '../modules/add'
 
 it('should add both type of product to cart', async () => {
-    const cart = add.cart;
+    const cart = add.cart
     const product1 = await new BulkProduct('Ground Beef', 5.00, 5)
     const product2 = await new Product('Apple', 1.00)
     await add.toCart(product1)
