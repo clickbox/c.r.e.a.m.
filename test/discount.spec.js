@@ -7,6 +7,7 @@ it('should create new discount object', async () => {
 
 it('should show assigned properties of new Discount', async () => {
     const Buy1Get1Free = new Discount(1, 1)
-    await expect(Buy1Get1Free.numToBuy).toEqual(1)
+    await expect(Buy1Get1Free.numberToBuy).toEqual(1)
     await expect(Buy1Get1Free.limit).toEqual(1)
 })
+
