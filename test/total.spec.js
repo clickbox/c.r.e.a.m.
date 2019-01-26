@@ -1,4 +1,5 @@
 import { Product } from '../modules/products'
+import { Buy1Get1Free } from '../modules/buy1get1free'
 import * as add from '../modules/add'
 import * as calculate from '../modules/calculate'
 
