@@ -1,9 +1,12 @@
-import { Discount } from '../modules/discount'
+import { Buy1Get1Free } from '../modules/buy1get1free'
+import { Product } from '../modules/products'
 import * as add from '../modules/add'
 
 it('should add discount to discounts array', async () => {
-    let discounts = add.discounts
-    const Buy1Get1Free = await new Discount('Ground Beef', 1, 1, 0, 100)
-    await add.toDiscounts(Buy1Get1Free)
-    await expect.any(discounts)
+    const Jeep = await new Product('Jeep', 80000, 2)
+    await add.toCart(Jeep)
+    await expect(Jeep.quantity).toEqual(2)
+    const buy1Get1Free = await new Buy1Get1Free(1, 1, 1)
+    await Jeep.addDiscount(buy1Get1Free)
+    console.log(Jeep)
 })
