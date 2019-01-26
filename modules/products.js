@@ -18,6 +18,7 @@ export class Product {
                             while(item.saleCounter < discount.limit) {
                                 item.totalPrice = item.quantity * item.price - item.price * discount.numberOff
                                 item.onSaleQuantity += discount.numberOff
+                                item.quantity -= discount.numberOff
                                 item.saleCounter++
                             }
                             
