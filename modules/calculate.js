@@ -8,6 +8,6 @@ export function ID(id, inventory){
 
 export function theTotal(cart){
     return cart.reduce(function(total, product){
-      return total + product.price * product.quantity + (product.totalPrice ? product.totalPrice : 0)
+      return total + ((product.price * product.quantity) + (product.totalPrice = null ? product.totalPrice : 0))
     }, 0)
 }

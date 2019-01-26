@@ -13,17 +13,15 @@ export class Product {
         this.applyDiscount = (item) => {
             this.discount.forEach(discount => {
                 if (discount instanceof Buy1Get1Free) {
-                    if (item.quantity >= discount.numberToBuy 
-                        && item.saleCounter < discount.limit) {
-                            while(item.saleCounter < discount.limit) {
-                                item.totalPrice = item.quantity * item.price - item.price * discount.numberOff
-                                item.onSaleQuantity += discount.numberOff
-                                item.quantity -= discount.numberOff
-                                item.saleCounter++
-                            }
-                            
-                    } else {
-                        console.log('Error! Discount Does Not Apply')
+                    while (item.quantity >= discount.numberToBuy && item.saleCounter < discount.limit) {
+                        if (item.totalPrice == null) {
+                            item.totalPrice = item.quantity * item.price - item.price * discount.numberOff
+                        } else {
+                            item.totalPrice -= item.price * discount.numberOff
+                        }
+                        item.onSaleQuantity += discount.numberOff
+                        item.quantity -= discount.numberOff
+                        item.saleCounter++
                     }
                 }
             })
