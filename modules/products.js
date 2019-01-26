@@ -6,6 +6,12 @@ export class Product {
         this.totalPrice = null
         this.saleCounter = 0
         this.onSaleQuantity = null
+        this.discount = []
+        this.addDiscount = this.addDiscount.bind(this)    
+    }
+
+    addDiscount(discount) {
+        this.discount.push(discount)
     }
 }
 
