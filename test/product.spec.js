@@ -45,5 +45,5 @@ it('should have quantity of 1 if parameter not passed', async () => {
 
 it('should have a total price property', async () => {
     const blueberry = await new Product('Blueberry', 1.00, 4)
-    await expect(blueberry.totalPrice).toEqual(4)
+    await expect(blueberry.totalPrice).toEqual(null)
 })
