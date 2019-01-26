@@ -3,6 +3,7 @@ export class Product {
         this.name = name
         this.price = price
         quantity ? this.quantity = quantity : this.quantity = 1
+        this.totalPrice = null
     }
 }
 
