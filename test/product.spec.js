@@ -52,3 +52,8 @@ it('should have saleCounter prop default of 0', async () => {
     const blueberry = await new Product('Blueberry', 1.00, 4)
     await expect(blueberry.saleCounter).toEqual(0)
 })
+
+it('should have saleCounter prop default of 0', async () => {
+    const blueberry = await new Product('Blueberry', 1.00, 4)
+    await expect(blueberry.quantityOnSale).toEqual(null)
+})
