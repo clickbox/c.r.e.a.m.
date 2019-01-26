@@ -1,12 +1,12 @@
 import { BulkProduct } from '../modules/bulkProduct'
 import * as calculate from '../modules/calculate'
+import * as add from '../modules/add'
 
 it('should calculate price of weighed products', async () => {
-    let product = await new BulkProduct('Ground Beef', 5.00, 2)
-    await expect(product.price).toBe(10)
-})
-
-it('should calculate price in constructor', async () => {
-    let peanuts = await new BulkProduct('Peanuts', 2.50, 4)
-    await expect(peanuts.price).toEqual(10)
+    let cart = add.cart
+    let beef = await new BulkProduct('Ground Beef', 5.00, 2)
+    await expect(beef.price).toBe(5.00)
+    await add.toCart(beef)
+    let total = await calculate.theTotal(cart)
+    expect(total).toEqual(10)
 })
