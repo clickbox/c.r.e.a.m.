@@ -10,6 +10,11 @@ export function discounts(cart) {
 
 export function theTotal(cart){
     return cart.reduce(function(total, product){
-      return total + ((product.price * product.quantity) + (product.totalPrice = null ? product.totalPrice : 0))
+        if(product.weight == undefined) {
+            return total + ((product.price * product.quantity) + (product.totalPrice = null ? product.totalPrice : 0))
+        } else {
+            return total + product.price * product.weight
+        }
+      
     }, 0)
 }
