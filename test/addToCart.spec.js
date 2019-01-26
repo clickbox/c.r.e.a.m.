@@ -13,5 +13,4 @@ it('put product in cart', async () => {
     await expect(cart.length).toEqual(1)
     await add.toCart(apple2)
     await expect(cart[0].quantity).toEqual(5)
-    console.log(cart)
 })

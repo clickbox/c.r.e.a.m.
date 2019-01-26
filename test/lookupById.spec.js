@@ -8,7 +8,6 @@ it('add products to fake inventory', async () => {
     const orange = await new Product('Orange', 1.50)
     await inventory.push(apple, lime, orange)
     await expect(inventory.length).toEqual(3)
-    await console.log(inventory)
 })
 
 it('look up products in fake inventory by id user inputs', async () => {
@@ -20,7 +19,6 @@ it('look up products in fake inventory by id user inputs', async () => {
     await inventory.push(apple, lime, orange)
     let product = await lookUpBy.ID(id, inventory)
     await expect(product.name).toBe('Lime')
-    await console.log(product)
 })
 
 it('should say product not found when id is null', async () => {
@@ -32,5 +30,4 @@ it('should say product not found when id is null', async () => {
     await inventory.push(apple, lime, orange)
     let product = await lookUpBy.ID(id, inventory)
     await expect(product).toEqual('Product Not Found!')
-    await console.log(product)
 })
