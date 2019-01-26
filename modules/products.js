@@ -5,7 +5,7 @@ export class Product {
         quantity ? this.quantity = quantity : this.quantity = 1
         this.totalPrice = null
         this.saleCounter = 0
-        this.quantityOnSale = null
+        this.onSaleQuantity = null
     }
 }
 
