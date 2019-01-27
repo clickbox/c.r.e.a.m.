@@ -1,6 +1,6 @@
 export class Discount {
-    constructor(numToBuy, limit) {
-        this.numberToBuy = numToBuy
+    constructor(numberToBuy, limit) {
+        this.numberToBuy = numberToBuy
         this.limit = limit
     }
 }
