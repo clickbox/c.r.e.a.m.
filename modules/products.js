@@ -1,5 +1,6 @@
 import { Buy1Get1Free } from "./buy1get1free";
 import { PercentOff } from "./percentOff";
+import { BuyNGetMX } from "./buyNgetMX";
 
 export class Product {
     constructor(name, price, quantity) {
@@ -30,9 +31,16 @@ export class Product {
                         item.quantity -= discount.numberOff
                         item.saleCounter++
                     }
-                }
-                if (discount instanceof PercentOff && item.quantity >= discount.numberToBuy) {
+                } else if (discount instanceof PercentOff && item.quantity >= discount.numberToBuy) {
                     item.price = discount.percentOff * item.price
+                } else {
+                    if (item.totalPrice == null) {
+                            item.totalPrice = item.quantity * item.price - ((item.price * discount.percentOff) * discount.numberOff)
+                        } else {
+                            item.totalPrice -= (item.price * discount.numberOff) * discount.percentOff
+                        }
+                    item.onSaleQuantity += discount.numberOff
+                    item.quantity -= discount.numberOff
                 }
             })
         }
