@@ -1,4 +1,5 @@
 import { Buy1Get1Free } from "./buy1get1free";
+import { PercentOff } from "./percentOff";
 
 export class Product {
     constructor(name, price, quantity) {
@@ -23,6 +24,9 @@ export class Product {
                         item.quantity -= discount.numberOff
                         item.saleCounter++
                     }
+                }
+                if (discount instanceof PercentOff && item.quantity >= discount.numberToBuy) {
+                    item.price = discount.percentOff * item.price
                 }
             })
         }
