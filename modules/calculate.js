@@ -11,9 +11,17 @@ export function discounts(cart) {
 export function theTotal(cart){
     return cart.reduce(function(total, product){
         if (product.weight == undefined) {
-            return total + product.price * product.quantity
+            if (product.totalPrice == null) {
+                return total + product.price * product.quantity
+            } else {
+                return total + product.totalPrice
+            }
         } else {
-            return total + product.price * product.weight
+            if (product.totalPrice == null) {
+                return total + product.price * product.weight
+            } else {
+                return total + product.totalPrice
+            }
         } 
     }, 0)
 }
