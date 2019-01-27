@@ -11,6 +11,12 @@ export class Product {
         this.onSaleQuantity = null
         this.discount = []
         this.addDiscount = (discount) => this.discount.push(discount)
+        this.remove = (item, numberToRemove) => {
+            item.quantity >= 1 ? item.quantity -= numberToRemove : console.log('Nothing to remove!')
+        }
+        this.add = (item, numberToAdd) => {
+            item.quantity += numberToAdd
+        } 
         this.applyDiscount = (item) => {
             this.discount.forEach(discount => {
                 if (discount instanceof Buy1Get1Free) {
