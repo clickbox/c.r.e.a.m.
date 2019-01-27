@@ -1,6 +1,6 @@
-import { Buy1Get1Free } from "./buy1get1free";
-import { PercentOff } from "./percentOff";
-import { BuyNGetMX } from "./buyNgetMX";
+import { Buy1Get1Free } from './buy1get1free'
+import { PercentOff } from './percentOff'
+import { BuySetFor } from '../modules/buySetFor'
 
 export class Product {
     constructor(name, price, quantity) {
@@ -17,7 +17,15 @@ export class Product {
         }
         this.add = (item, numberToAdd) => {
             item.quantity += numberToAdd
-        } 
+        }
+        this.applySetPrice = (item) => {
+            this.discount.forEach(discount => {
+                    while (item.saleCounter < discount.limit) {
+                        item.totalPrice = discount.priceForSet
+                        item.saleCounter++
+                    }
+            })
+        }
         this.applyDiscount = (item) => {
             this.discount.forEach(discount => {
                 if (discount instanceof Buy1Get1Free) {
