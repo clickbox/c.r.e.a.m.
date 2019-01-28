@@ -1,6 +1,6 @@
 # C.R.E.A.M. API
 
-Cream is nodeJS Shopping Cart Rest API
+Cream is a nodeJS Shopping Cart Rest API
 
 ### Installation
 
